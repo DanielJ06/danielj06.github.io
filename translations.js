@@ -59,6 +59,9 @@ const TRANSLATIONS = {
     tag_teaching: "Teaching",
     tag_video: "Video",
 
+    cta_email: "Copy email",
+    cta_email_copied: "Copied!",
+
     // Contact
     section_contact: "Contact",
   },
@@ -122,6 +125,9 @@ const TRANSLATIONS = {
     tag_article: "Artigo",
     tag_teaching: "Ensino",
     tag_video: "Vídeo",
+
+    cta_email: "Copiar email",
+    cta_email_copied: "Copiado!",
 
     // Contato
     section_contact: "Contato",

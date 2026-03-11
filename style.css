@@ -76,8 +76,10 @@ a {
   transition: color 0.2s ease;
 }
 
-a:hover {
-  color: var(--link-hover);
+@media (hover: hover) {
+  a:hover {
+    color: var(--link-hover);
+  }
 }
 
 /* Header */
@@ -130,6 +132,69 @@ strong {
   margin-bottom: 1.5rem;
 }
 
+/* Copy email CTA */
+.copy-email {
+  background: none;
+  border: 1px solid #2a2a2a;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  margin-top: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  min-width: 6.5rem;
+  justify-content: center;
+  transition: color 0.2s ease-out, border-color 0.2s ease-out,
+              transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+}
+
+.copy-email:active {
+  transform: scale(0.97);
+  transition: color 0.2s ease-out, border-color 0.2s ease-out,
+              transform 0.07s ease-in;
+}
+
+.copy-email.copied {
+  color: var(--text);
+  border-color: #383838;
+}
+
+.copy-email:focus-visible {
+  border-color: var(--muted);
+  color: var(--link-hover);
+}
+
+.copy-label {
+  transition: opacity 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.copy-label.fade {
+  opacity: 0;
+  filter: blur(4px);
+}
+
+@media (hover: hover) {
+  .copy-email:hover {
+    color: var(--link-hover);
+    border-color: #404040;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy-email,
+  .copy-label {
+    transition: none;
+  }
+
+  .copy-email:active {
+    transition: none;
+  }
+}
+
 /* Experience */
 .experience-list {
   list-style: none;
@@ -156,15 +221,17 @@ strong {
   opacity: 0.3;
   vertical-align: super;
   display: inline-block;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease-out;
 }
 
-.experience-item h3 a:hover {
-  color: var(--link-hover);
-}
+@media (hover: hover) {
+  .experience-item h3 a:hover {
+    color: var(--link-hover);
+  }
 
-.experience-item h3 a:hover::after {
-  opacity: 0.7;
+  .experience-item h3 a:hover::after {
+    opacity: 0.7;
+  }
 }
 
 .experience-role {
@@ -207,8 +274,10 @@ strong {
   color: #999;
 }
 
-a.sharing-title:hover {
-  color: var(--link-hover);
+@media (hover: hover) {
+  a.sharing-title:hover {
+    color: var(--link-hover);
+  }
 }
 
 /* Contact */
@@ -223,8 +292,10 @@ a.sharing-title:hover {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.contact a:hover {
-  border-color: var(--link-hover);
+@media (hover: hover) {
+  .contact a:hover {
+    border-color: var(--link-hover);
+  }
 }
 
 /* Separator */
@@ -254,6 +325,11 @@ footer p {
   font-size: 0.8rem;
   color: var(--muted);
   z-index: 10;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 6px;
+  border: 1px solid #1e1e1e;
 }
 
 .lang-toggle button {
@@ -263,12 +339,20 @@ footer p {
   font-family: var(--font-body);
   font-size: 0.8rem;
   cursor: pointer;
-  padding: 0.25rem 0.4rem;
+  padding: 0.75rem 0.5rem;
+  min-height: 44px;
   transition: color 0.2s ease;
+  outline: none;
 }
 
-.lang-toggle button:hover {
+.lang-toggle button:focus-visible {
   color: var(--link-hover);
+}
+
+@media (hover: hover) {
+  .lang-toggle button:hover {
+    color: var(--link-hover);
+  }
 }
 
 .lang-toggle button.active {
@@ -296,6 +380,103 @@ footer p {
   .lang-toggle {
     top: 1rem;
     right: 1rem;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.lang-toggle {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+header {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 100ms;
+}
+
+main section:nth-of-type(1) {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 250ms;
+}
+
+main hr:nth-of-type(1) {
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 325ms;
+}
+
+main section:nth-of-type(2) {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 400ms;
+}
+
+main hr:nth-of-type(2) {
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 475ms;
+}
+
+main section:nth-of-type(3) {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 550ms;
+}
+
+main hr:nth-of-type(3) {
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 625ms;
+}
+
+main section:nth-of-type(4) {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 700ms;
+}
+
+main hr:nth-of-type(4) {
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 775ms;
+}
+
+main section:nth-of-type(5) {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 850ms;
+}
+
+main hr:nth-of-type(5) {
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 925ms;
+}
+
+main section:nth-of-type(6) {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 1000ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-toggle,
+  header,
+  main section,
+  main hr {
+    animation: none;
   }
 }
 

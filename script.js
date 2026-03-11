@@ -14,7 +14,37 @@
     });
   }
 
+  const currentLang = () => root.getAttribute('data-lang') || 'en';
+
   applyLang(localStorage.getItem('lang') || 'en');
+
+  document.querySelectorAll('.copy-email').forEach(btn => {
+    let resetTimer = null;
+
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(btn.dataset.email).then(() => {
+        const label = btn.querySelector('.copy-label');
+        if (resetTimer) clearTimeout(resetTimer);
+
+        label.classList.add('fade');
+        btn.classList.add('copied');
+
+        setTimeout(() => {
+          label.textContent = TRANSLATIONS[currentLang()].cta_email_copied;
+          label.classList.remove('fade');
+        }, 150);
+
+        resetTimer = setTimeout(() => {
+          label.classList.add('fade');
+          btn.classList.remove('copied');
+          setTimeout(() => {
+            label.textContent = TRANSLATIONS[currentLang()].cta_email;
+            label.classList.remove('fade');
+          }, 150);
+        }, 2000);
+      });
+    });
+  });
 
   document.querySelectorAll('.lang-toggle button').forEach(btn => {
     btn.addEventListener('click', () => {
