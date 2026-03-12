@@ -44,10 +44,10 @@ const TRANSLATIONS = {
     journey_rn_detail: "At RWTECH, I <strong>rewrote a native Java app in React Native</strong>, delivering geolocation, maps, camera, authentication, and offline support. Then at Kangwru, a European startup operating across Africa, I shipped features with TypeScript, Apollo Client, Reanimated 2, internationalization, and real-time operations. This is where I learned to balance developer experience, performance, and product velocity in cross-platform work.",
 
     journey_android_title: "Deep native Android",
-    journey_android_detail: "At ioasys, I worked on large-scale Android products for major Brazilian companies: digital banking, e-commerce, and rebranding initiatives. I went deep into architecture, modularization, performance optimization, and security hardening. This native depth now directly informs how I debug, architect, and optimize cross-platform work.",
+    journey_android_detail: "At ioasys, I worked on large-scale Android products for major Brazilian companies: digital banking, e-commerce, and rebranding initiatives. I went deep into architecture, modularization, performance optimization, and security hardening.",
 
     journey_ios_title: "iOS & current work",
-    journey_ios_detail: "Still at ioasys, I moved into iOS with SwiftUI and took on <strong>full product ownership</strong>, from app architecture and security to design systems and CI automation. Working natively on both platforms gave me a perspective that's rare in the cross-platform ecosystem: I don't just use the abstractions, I understand what's underneath.",
+    journey_ios_detail: "Still at ioasys, I moved into iOS with SwiftUI and took on <strong>full product ownership</strong>, from app architecture and security to design systems and CI automation. Working natively on both platforms gave me a new and deeper perspective in the cross-platform ecosystem",
 
     // Writing section
     section_writing: "Writing",
@@ -111,10 +111,10 @@ const TRANSLATIONS = {
     journey_rn_detail: "Na RWTECH, <strong>reescrevi um app nativo Java em React Native</strong>, entregando geolocalização, mapas, câmera, autenticação e suporte offline. Depois na Kangwru, uma startup europeia operando na África, entreguei features com TypeScript, Apollo Client, Reanimated 2, internacionalização e operações em tempo real. Foi onde aprendi a equilibrar experiência de desenvolvimento, performance e velocidade de produto em trabalho cross-platform.",
 
     journey_android_title: "Android nativo em profundidade",
-    journey_android_detail: "Na ioasys, trabalhei em produtos Android de grande escala para grandes empresas brasileiras: banking digital, e-commerce e iniciativas de rebranding. Mergulhei fundo em arquitetura, modularização, otimização de performance e security hardening. Essa profundidade nativa hoje informa diretamente como eu debugo, arquiteto e otimizo trabalho cross-platform.",
+    journey_android_detail: "Na ioasys, trabalhei em produtos Android de grande escala para grandes empresas brasileiras: banking digital, e-commerce e iniciativas de rebranding. Mergulhei fundo em arquitetura, modularização, otimização de performance e security hardening.",
 
     journey_ios_title: "iOS & trabalho atual",
-    journey_ios_detail: "Ainda na ioasys, migrei para iOS com SwiftUI e assumi <strong>ownership completo do produto</strong>, de arquitetura e segurança a design systems e automação de CI. Trabalhar nativamente em ambas as plataformas me deu uma perspectiva rara no ecossistema cross-platform: eu não apenas uso as abstrações, eu entendo o que está por baixo.",
+    journey_ios_detail: "Ainda na ioasys, migrei para iOS com SwiftUI e assumi <strong>ownership completo do produto</strong>, de arquitetura e segurança a design systems e automação de CI. Trabalhar nativamente em ambas as plataformas me deu uma perspectiva nova e mais profunda do ecossistema cross-platform.",
 
     // Seção Escrita
     section_writing: "Escrita",
