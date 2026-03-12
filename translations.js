@@ -61,6 +61,7 @@ const TRANSLATIONS = {
 
     cta_email: "Copy email",
     cta_email_copied: "Copied!",
+    cta_cv: "Download CV",
 
     // Contact
     section_contact: "Contact",
@@ -128,6 +129,7 @@ const TRANSLATIONS = {
 
     cta_email: "Copiar email",
     cta_email_copied: "Copiado!",
+    cta_cv: "Baixar CV",
 
     // Contato
     section_contact: "Contato",

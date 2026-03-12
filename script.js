@@ -1,5 +1,23 @@
 (() => {
   const root = document.documentElement;
+  const CV_FILES = {
+    en: {
+      href: 'assets/Daniel_Rodrigues_CV_EN.docx',
+      filename: 'Daniel_Rodrigues_CV_EN.docx',
+    },
+    pt: {
+      href: 'assets/Daniel_Rodrigues_CV_PT.docx',
+      filename: 'Daniel_Rodrigues_CV_PT.docx',
+    },
+  };
+
+  function syncCvLink(lang) {
+    const cvFile = CV_FILES[lang] || CV_FILES.en;
+    document.querySelectorAll('.download-cv').forEach(link => {
+      link.setAttribute('href', cvFile.href);
+      link.setAttribute('download', cvFile.filename);
+    });
+  }
 
   function applyLang(lang) {
     root.setAttribute('data-lang', lang);
@@ -12,6 +30,7 @@
     document.querySelectorAll('.lang-toggle button').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
+    syncCvLink(lang);
   }
 
   const currentLang = () => root.getAttribute('data-lang') || 'en';

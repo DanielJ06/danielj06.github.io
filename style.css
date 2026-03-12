@@ -115,6 +115,14 @@ strong {
   line-height: 1.75;
 }
 
+.bio-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
 /* Genesys logo */
 .genesys-logo {
   display: block;
@@ -132,24 +140,40 @@ strong {
   margin-bottom: 1.5rem;
 }
 
-/* Copy email CTA */
-.copy-email {
+/* Bio CTAs */
+.copy-email,
+.download-cv {
   background: none;
   border: 1px solid #2a2a2a;
   border-radius: 5px;
   padding: 0.4rem 0.8rem;
-  margin-top: 1rem;
   font-family: var(--font-body);
   font-size: 0.8rem;
   color: var(--muted);
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   min-width: 6.5rem;
   justify-content: center;
+  text-decoration: none;
+  line-height: 1.2;
+  outline: none;
+}
+
+.copy-email {
+  cursor: pointer;
   transition: color 0.2s ease-out, border-color 0.2s ease-out,
               transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  outline: none;
+}
+
+.download-cv {
+  transition: color 0.2s ease-out, border-color 0.2s ease-out,
+              transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.download-cv:active {
+  transform: scale(0.97);
+  transition: color 0.2s ease-out, border-color 0.2s ease-out,
+              transform 0.07s ease-in;
 }
 
 .copy-email:active {
@@ -168,6 +192,11 @@ strong {
   color: var(--link-hover);
 }
 
+.download-cv:focus-visible {
+  border-color: var(--muted);
+  color: var(--link-hover);
+}
+
 .copy-label {
   transition: opacity 0.15s ease-out, filter 0.15s ease-out;
 }
@@ -178,7 +207,8 @@ strong {
 }
 
 @media (hover: hover) {
-  .copy-email:hover {
+  .copy-email:hover,
+  .download-cv:hover {
     color: var(--link-hover);
     border-color: #404040;
   }
@@ -186,11 +216,13 @@ strong {
 
 @media (prefers-reduced-motion: reduce) {
   .copy-email,
+  .download-cv,
   .copy-label {
     transition: none;
   }
 
-  .copy-email:active {
+  .copy-email:active,
+  .download-cv:active {
     transition: none;
   }
 }
