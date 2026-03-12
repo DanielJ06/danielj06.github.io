@@ -339,7 +339,7 @@ footer p {
   font-family: var(--font-body);
   font-size: 0.8rem;
   cursor: pointer;
-  padding: 0.75rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   min-height: 44px;
   transition: color 0.2s ease;
   outline: none;
